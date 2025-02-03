@@ -3,7 +3,7 @@ import jax.numpy as jnp
 import time
 
 def serial_matmul(matrix1, matrix2):
-  return jnp.dot(matrix1, matrix2)  # jax.numpy.ndarray
+  return jnp.dot(matrix1, matrix2)
 
 
 if __name__ == "__main__":
@@ -14,7 +14,7 @@ if __name__ == "__main__":
   matrix1 = jax.random.normal(key, (matrix_size, matrix_size))
   matrix2 = jax.random.normal(key, (matrix_size, matrix_size))
 
-  # 性能测试 - 串行版本
+  # 性能测试
   start_time_serial = time.time()
   result_serial = serial_matmul(matrix1, matrix2)
   end_time_serial = time.time()
@@ -22,5 +22,5 @@ if __name__ == "__main__":
 
   print("串行矩阵乘法 (单设备):")
   print(f"  矩阵大小: {matrix_size}x{matrix_size}")
-  print(f"  设备: {jax.devices()[0]}") # 打印当前使用的设备
+  print(f"  设备: {jax.devices()[0]}") 
   print(f"  计算时间: {serial_time:.4f} 秒")
