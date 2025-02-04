@@ -17,8 +17,8 @@ def parallel_matmul(matrix1, matrix2):
 key = jax.random.PRNGKey(0) #  添加 PRNGKey
 key1, key2 = jax.random.split(key) # 使用不同的随机数序列
 
-matrix1 = jax.random.normal(key1, (256, 1024, 1024)) 
-matrix2 = jax.random.normal(key2, (256, 1024, 1024)) 
+matrix1 = jax.random.normal(key1, (2, 1024, 1024)) 
+matrix2 = jax.random.normal(key2, (2, 1024, 1024)) 
 
 # 调用并行化的模型
 output = parallel_matmul(matrix1, matrix2)
