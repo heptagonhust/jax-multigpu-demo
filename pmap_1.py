@@ -2,10 +2,10 @@ import jax
 import jax.numpy as jnp
 import functools
 
-# 矩阵乘，使用 jax.jit 优化编译
+# 使用 jax.jit 优化编译
 @jax.jit
 def matmul(matrix1, matrix2):
-  return jax.vmap(jnp.matmul(matrix1, matrix2))
+  return jnp.matmul(matrix1, matrix2)
 
 # 使用 jax.pmap 进行多设备并行化
 @jax.pmap
